@@ -1,0 +1,5 @@
+com\jul\CoronaTracker\CoronaTrackerApplication.class
+com\jul\CoronaTracker\config\DataUrlProperties.class
+com\jul\CoronaTracker\models\LocationStats.class
+com\jul\CoronaTracker\controllers\HomeController.class
+com\jul\CoronaTracker\services\CoronaVirusDataService.class

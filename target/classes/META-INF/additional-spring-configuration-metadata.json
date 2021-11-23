@@ -1,0 +1,8 @@
+{
+  "properties": [
+    {
+      "name": "virus.url",
+      "type": "java.lang.String",
+      "description": "Description for virus.url."
+  }
+] }
