@@ -21,7 +21,7 @@ import java.util.List;
 public class CoronaVirusDataService {
 
     //@Value("${virus.url}")
-    private String VIRUS_DATA_URL = "https://raw.githubusercontent.com/CSSEGISandData/COVID-19/master/csse_covid_19_data/csse_covid_19_time_series/time_series_covid19_confirmed_global.csv";
+    private String VIRUS_DATA_URL = "https://raw.githubusercontent.com/CSSEGISandData/COVID-19/master/csse_covid_19_data/csse_covid_19_daily_reports/02-01-2022.csv";
 
     private List<LocationStats> allStats = new ArrayList<>();
 
@@ -48,11 +48,12 @@ public class CoronaVirusDataService {
 
         for (CSVRecord record : records) {
             LocationStats locationStat = new LocationStats();
-            locationStat.setState(record.get("Province/State"));
-            locationStat.setCountry(record.get("Country/Region"));
-            locationStat.setLatestTotalCases(Integer.parseInt(record.get(record.size() - 1)));
-            System.out.println(locationStat);
+            locationStat.setState(record.get("Province_State"));
+            locationStat.setCountry(record.get("Country_Region"));
+            locationStat.setLatestTotalCases(Integer.parseInt(record.get("Confirmed")));
             newStats.add(locationStat);
+
+
         }
         this.allStats = newStats;
     }
